@@ -8,7 +8,14 @@ import java.util.ArrayList;
 
 public class SubscriptionService {
 
-    public Float getSubscriptionsByUser(User user) throws UserNotLoggedInException {
+    /**
+     * Devuelve el costo total de las suscripciones de un usuario siempre que el usuario que esté logueado
+     * se encuentre en su lista de amigos
+     * @param user
+     * @return costo total de la suscripciones del user
+     * @throws UserNotLoggedInException si no hay un usuario logueado
+     */
+    public Float getUserSubscriptionsCost(User user) throws UserNotLoggedInException {
         ArrayList<Subscription> subscriptionList = new ArrayList<Subscription>();
 
         // get logged user

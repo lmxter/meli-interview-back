@@ -7,7 +7,10 @@ import java.util.List;
 
 public class User {
 
-    private List<Subscription> trips = new ArrayList<Subscription>();
+    private String id;
+    private String name;
+
+    private List<Subscription> subscriptions = new ArrayList<Subscription>();
     private List<User> friends = new ArrayList<User>();
 
     public List<User> getFriends() {
@@ -19,11 +22,26 @@ public class User {
     }
 
     public void addSubscription(Subscription trip) {
-        trips.add(trip);
+        subscriptions.add(trip);
     }
 
     public List<Subscription> subscriptions() {
-        return trips;
+        return subscriptions;
     }
 
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 }
