@@ -1,10 +1,13 @@
-package com.meli.interview.back.subscription_api.subscription;
+package com.meli.interview.back.subscription_api.services.impl;
 
-import com.meli.interview.back.subscription_api.exception.UserNotLoggedInException;
-import com.meli.interview.back.subscription_api.session.User;
-import com.meli.interview.back.subscription_api.session.UserSession;
+import com.meli.interview.back.subscription_api.dao.impl.SubscriptionDAO;
+import com.meli.interview.back.subscription_api.models.Subscription;
+import com.meli.interview.back.subscription_api.models.exceptions.UserNotLoggedInException;
+import com.meli.interview.back.subscription_api.models.User;
+import com.meli.interview.back.subscription_api.models.UserSession;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class SubscriptionService {
 
@@ -16,7 +19,7 @@ public class SubscriptionService {
      * @throws UserNotLoggedInException si no hay un usuario logueado
      */
     public Float getUserSubscriptionsCost(User user) throws UserNotLoggedInException {
-        ArrayList<Subscription> subscriptionList = new ArrayList<Subscription>();
+        List<Subscription> subscriptionList = new ArrayList<>();
 
         // get logged user
         User loggedUser = UserSession.getInstance().getLoggedUser();

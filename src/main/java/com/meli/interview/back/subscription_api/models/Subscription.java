@@ -1,4 +1,4 @@
-package com.meli.interview.back.subscription_api.subscription;
+package com.meli.interview.back.subscription_api.models;
 
 public class Subscription {
     private String partner;
